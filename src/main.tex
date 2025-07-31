@@ -1,0 +1,327 @@
+% === Document Class ===
+\documentclass[11pt]{article}
+
+% === Required Packages ===
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext,newtxmath}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{datetime}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+% === Reassigning Existing Commands ===
+\renewcommand{\rmdefault}{lmr}
+\renewcommand{\sfdefault}{lmss}
+\renewcommand{\ttdefault}{lmtt}
+\renewcommand{\arraystretch}{1.35}
+\renewcommand{\contentsname}{Table of Contents}
+\renewcommand{\footrulewidth}{0.4pt}
+\newdateformat{truoXdate}{\THEDAY~\monthname[\THEMONTH]~\THEYEAR}
+
+% === Assigning New Commands ===
+\newcommand{\CompanyName}{\textbf{\texttt{Redacted}}}
+\newcommand{\BrandName}{\textbf{\texttt{Redacted}}}
+\newcommand{\DocumentID}{\textbf{\texttt{Redacted}}}
+\newcommand{\Version}{1.0}
+\newcommand{\EffectiveDate}{\textbf{\texttt{Redacted}}}
+\newcommand{\Author}{\textbf{\texttt{Redacted}}}
+\newcommand{\Reviewer}{\textbf{\texttt{Redacted}}}
+\newcommand{\Approver}{\textbf{\texttt{Redacted}}}
+\newcommand{\DocumentOwner}{\textbf{\texttt{Redacted}}}
+\newcommand{\SOPTitle}{SOP Writing Protocol}
+\newcommand{\CoverTitleFont}{\fontsize{22}{24}\selectfont\bfseries}
+\newcommand{\CoverSubTitleFont}{\fontsize{18}{30}\selectfont}
+\newcommand{\CoverMetaFont}{\fontsize{12}{14}\selectfont}
+
+% === Header and Footer Formatting ===
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\SOPTitle\\[0.2em]\small \DocumentID, Version \Version}
+\fancyhead[R]{\CompanyName}
+\fancyfoot[L]{\textbf{Internal Use Only} | \textbf{Printed on:} {\textbf{\texttt{Redacted}}}}
+\fancyfoot[R]{Page \thepage \space / \pageref{LastPage}}
+
+% === Spacing Formatting ===
+\linespread{1.1}
+\setlength{\headheight}{12pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\titlespacing*{\section}{0pt}{1.5ex plus 0.5ex minus 0.2ex}{0.8ex}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\begin{document}
+
+% === Cover Page ===
+\thispagestyle{empty}
+\begin{center}
+    % Logo Redacted for Public Version
+    \includegraphics{Logo-01.png} \\
+    \vspace{2cm}
+    {\CoverTitleFont Standard Operating Procedure}\\ [0.25 cm]
+    {\CoverSubTitleFont \SOPTitle}\\[0.25 cm]
+    \vspace{2cm}
+    \begin{center}
+    \begin{tabular}{rl}
+    \textbf{Company Name:} & \CompanyName\\
+    \textbf{Operating Name:} & \BrandName \\
+    \textbf{SOP Number:} & \DocumentID \\
+    \textbf{Version:} & 1.0 \\
+    \textbf{Effective Date:} & \EffectiveDate \\
+    \textbf{Author:} & \Author \\
+    \textbf{Reviewer:} & \Reviewer \\
+    \textbf{Approver:} & \Author \\
+    \textbf{Document Owner:} & \DocumentOwner \\
+    \end{tabular}
+    \end{center}
+    \vspace{2cm}
+    {\textbf{Controlled Document - Internal Use Only}}\\[0.1 cm]
+    {\textbf{Intellectual Property of \CompanyName}}\\[0.1 cm]
+    {\textbf{Unauthorized Distribution is Prohibited}}\\
+\end{center}
+
+
+%Main Body
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\section{Objective}
+    This document defines the standardized format, structure, and procedural expectations for writing and formatting Standard Operating Procedures (SOPs) at \CompanyName
+
+\section{Scope}
+    This document applies to all personnel involved in the writing and formatting of SOPs at \CompanyName \space This establishes the structure, layout, and document preparation standards used during SOP writing. This SOP does not cover SOP review, approval, distribution, or archival. These are addressed in SOPs {\textbf{\texttt{Redacted}}} and {\textbf{\texttt{Redacted}}}.
+
+\section{Responsibilities}
+    \begin{center}
+        \begin{tabularx}{\textwidth}{|l|X|}
+        \hline
+        \rowcolor{gray!30}
+        \textbf{Role} & \textbf{Responsibility} \\
+        \hline
+        \textbf{Document Authors} & Draft SOPs using the approved format defined in this SOP. Ensure the content is complete and accurate. Ensure both the .tex and .pdf files are sent to the appropriate reviewer and confirm their reception.\\
+        \hline
+        \end{tabularx}
+    \end{center}
+
+\section{Definitions}
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\rowcolor{gray!30}
+\textbf{Term} & \textbf{Definition} \\
+\hline
+\textbf{Compiler} & A software tool that processes source code and converts it into a formatted output file (.pdf at \CompanyName).\\
+\hline
+\textbf{LaTeX} & A document preparation system written in code used in scientific, academic, and technical fields for producing professionally formatted documents.\\
+\hline
+\textbf{Online LaTeX Environment} & A web-based platform that allows users to write, compile, and collaborate on LaTeX documents without installing local software.\\
+\hline
+\textbf{SOP} & Standard Operating Procedure - a controlled document describing standardized methods for operational tasks.\\
+\hline
+\textbf{QA} & Quality Assurance - department responsible for maintaining compliance with regulatory standards and internal quality systems.\\
+\hline
+\end{tabularx}
+
+\section{Equipment and Materials}
+No laboratory or analytical instrumentation is required to execute this SOP. The only materials needed are:
+\begin{itemize}
+    \item A computer or workstation with LaTeX compiler (e.g., TeX Live, MikTeX) or an online LaTeX environment (e.g., Overleaf)
+    \item Access to \CompanyName's SOP template files and document control system
+    \item PDF viewer and text editor for verification
+\end{itemize}
+
+Overleaf is highly recommended as it has PDF viewer, collaborative editing, and reviewing integration.
+
+\section{Safety and Precautions}
+    This SOP is administrative in nature and does not involve exposure to chemicals, laboratory equipment, or physical hazards.
+    
+    However, the following procedural safeguards apply:
+    
+    \begin{itemize}
+        \item SOPs are controlled documents. Unauthorized distribution or modification is strictly prohibited.
+        \item All electronic files must be stored on secure, access-restricted drives or systems with version control.
+        \item Printed SOPs must be verified against the current approved version before use.
+        \item Personnel must be trained on this SOP before drafting, revising, or approving any controlled document.
+    \end{itemize}
+    
+    Refer to SOP {\textbf{\texttt{Redacted}}} in the event of improper documentation practices or version discrepancies.
+
+\section{Procedure}
+     While drafts may be authored collaboratively in Word or Google Docs in any format, only LaTeX-compiled PDF files shall be considered official controlled documents. All SOPs shall be finalized and archived as PDF documents compiled from LaTeX source files. Formatting, versioning, headers, footers, and pagination must conform to \CompanyName's LaTeX SOP template. Word-based PDFs, screenshots, or other non-LaTeX exports are not permitted for final use or distribution.
+
+\subsection{SOP Structure and Sectioning}
+\subsubsection{Required Sections}
+    \begin{enumerate}
+        \item \textbf{Cover Page:} It shall contain the logo, document type, title, metadata that includes the \textbf{company name}, \textbf{operating name}, \textbf{SOP number}, \textbf{version}, \textbf{effective date}, and the name(s) of the \textbf{author}, \textbf{reviewer}, \textbf{approver}, \textbf{document owner}, and the \textbf{"Controlled Document - Internal Use Only, Intellectual Property of TruoX Pharmaceuticals Inc., and Unauthorized Distribution is Prohibited"} labels.
+        \item \textbf{Objective:} On a new page, it shall contain one to two sentences about what the document aims to accomplish.
+        \item \textbf{Scope:} It shall contain one to five sentences describing which personnel and department(s) the document applies to and a brief overview of the relevant content. If applicable, it also shall contain what the document does not address.
+        \item \textbf{Responsibilities:} It shall contain a table with 2 columns for the \textbf{role} and the corresponding \textbf{responsibility}, respectively. The number of rows corresponds to the number of listed roles plus the top row for the role and responsbility header. The roles must be listed in alphabetical order.
+        \item \textbf{Definitions:} It shall contain a table with 2 columns for the \textbf{term} and the corresponding \textbf{definition}, respectively. The number of rows corresponds to the number of listed terms plus the top row for the term and definition header. The terms shall be listed in alphabetical order. The terms include abbreviations, acronyms, technical terms, and legal terms.
+        \item \textbf{Equipment and Materials:} : It shall contain a list of the required equipment and material to perform the procedure detailed in the document. If there is no equipment or material to be listed, it shall still contain a statement on the absence of equipment and materials.
+        \item \textbf{Safety and Precautions:} It shall contain paragraphs describing PPE, general safety rules, chemical or equipment-specific risks, and cross-references to applicable safety SOPs. If there is no safety or precaution considerations, it shall contain a statement.
+        \item \textbf{Procedure:} This is the core section of SOPs. It shall outline the process in sequential steps or subsections.
+        \item \textbf{References:} It shall contain a list of regulatory documents, related SOPs, pharmacopeias, internal protocols, or published standards referenced in the SOP. Use full titles and SOP numbers if applicable.
+        \item \textbf{Document History:} On a separate page, it shall contain a table listing the version number, change summary, date, and approver name.
+        \item \textbf{Signature Page:} On a separate page, it shall contain the name, job title, date, time, and meaning fields for the author, reviewer, approver, and document owner.
+        \item \textbf{Appendix:} On a separate page, it shall contain supplementary materials such as LaTeX snippets, diagrams, tables. Appendices shall be labeled and referenced within the Procedure section, if applicable.
+    \end{enumerate}
+\subsection{Formatting Rules}
+\subsubsection{Header and Footer}
+All SOPs must include standardized headers and footers on every page except the cover page. The following rules apply:
+\begin{itemize}
+    \item The header must include:
+    \begin{itemize}
+        \item Left: SOP Subtitle
+        \item Right: Company name
+    \end{itemize}
+    \item The footer must include:
+    \begin{itemize}
+        \item Left: “Internal Use Only” label
+        \item Center: Page number
+        \item Right: SOP number and version
+    \end{itemize}
+    \item Cover page must have no header and a text containing “Do Not Distribute – Internal Document.”
+    \item Headers and footers must be implemented using the \texttt{fancyhdr} package in LaTeX or the header/footer tool in Word.
+\end{itemize}
+\subsubsection{Section Numbering Guidelines}
+
+\subsubsection{Coding Standards for SOPs in LaTeX}
+
+\subsubsection{Cover Page Formatting}
+
+\subsubsection{Document History Formatting}
+On a new page, it only has the table displaying sequentially horizontally the version, history (or change), date, and name of the approver. There is no header, and only the page number in roman numerals is required in the footer. This is page i. This is the code snippet for the document history page:
+
+\subsubsection{Table of Contents Formatting}
+The table of content is represented under this snippet of code:
+
+\subsection{Language and Grammar Standards}
+This section defines the writing conventions that must be followed to ensure consistency, clarity, and regulatory compliance across all SOPs issued by TruoX Laboratories.
+
+\subsubsection{Tone and Clarity [OK]}
+\begin{itemize}
+    \item All SOPs must be written in clear, concise, and unambiguous language.
+    \item Use the \textbf{imperative mood} for procedural steps (e.g., “Record the result,” “Calibrate the instrument,” not “You should record…”).
+    \item Avoid passive voice unless clarity is improved.
+    \item Use present tense for instructions, unless past tense is required for reporting.
+    \item Do not use subjective, speculative, or informal language (e.g., avoid words like “try,” “maybe,” or “possibly”).
+\end{itemize}
+
+\subsubsection{Spelling and Style [OK]}
+\begin{itemize}
+    \item Use Canadian English spelling consistently (e.g., “favour,” “labour,” “centre”).
+    \item Numbers one through ten should be written as words in general text, except when used in measurements (e.g., “5 mL” not “five mL”).
+    \item Use correct units and formatting for measurements (e.g., “mL” not “ml”, “µm” not “um”).
+    \item Capitalize proper nouns, section names, and defined roles (e.g., Quality Control Analyst, SOP, Section 4.3).
+    \item Acronyms must be defined at first mention (e.g., “Standard Operating Procedure (SOP)”).
+\end{itemize}
+
+\subsubsection{Punctuation and Formatting}
+\begin{itemize}
+    \item Use standard punctuation. Avoid excessive use of parentheses, em-dashes, or exclamation marks.
+    \item Use the Oxford comma in lists for clarity.
+    \item Use consistent bullet formats and indentation (see Section 4.4: Formatting Enforcement).
+    \item Avoid ALL CAPS unless required for labels or regulatory acronyms (e.g., GMP, USP).
+    \item Use italics for document titles, SOP references, and Latin terms (e.g., *in vitro*, *via*, *e.g.*).
+\end{itemize}
+
+\subsubsection{Referencing and Cross-Referencing}
+\begin{itemize}
+    \item Refer to other SOPs using their full identifier and title (e.g., “Refer to SOP TP-QC-GM-012: Deviation and Incident Management”).
+    \item When referencing sections within the current document, capitalize and format appropriately (e.g., “see Section 4.3.2”).
+    \item Do not use hyperlinks in controlled SOPs. All references must be traceable by document ID or physical location.
+\end{itemize}
+
+\subsubsection{Common Pitfalls to Avoid [OK]}
+\begin{itemize}
+    \item Do not use slang, shorthand, or unapproved abbreviations.
+    \item Do not include personal opinions or ambiguous terms (e.g., “it is assumed,” “might be necessary”).
+    \item Do not deviate from approved terminology in templates, job titles, or roles.
+    \item Avoid inconsistent phrasing between similar SOPs (use standardized phrases wherever possible).
+\end{itemize}
+
+\subsection{File Naming, Versioning, and Metadata}
+\subsection{Review, Approval, and Issuance Process}
+
+\section{References}
+    \textbf{Health Canada. GUI-0001}: \textit{"Good manufacturing practices guide for drug products"}\\[0.2cm]
+    \textbf{U.S. Food and Drug Administration. 21 CFR Part 211}: \textit{"Current Good Manufacturing Practice for Finished Pharmaceuticals"}\\[0.2cm]
+    \textbf{International Council for Harmonisation. ICH Q10}: \textit{"Pharmaceutical Quality System"}\\[0.2cm]
+
+\section{Appendix}
+\subsection*{Appendix A: LaTeX Formatting}
+\addcontentsline{toc}{subsection}{Appendix A: LaTeX Template Code}
+
+\subsection*{Appendix A.1: LaTeX Preliminary Formatting}
+\addcontentsline{toc}{subsubsection}{Appendix A.1: LaTeX Preliminary Formatting}
+
+
+\subsubsection*{Appendix A.2: Cover Page Formatting Template}
+\addcontentsline{toc}{subsubsection}{Appendix A.2:  Cover Page Formatting Template}
+
+
+\subsubsection*{Appendix A.3: Document History Formatting Template}
+\addcontentsline{toc}{subsubsection}{Appendix A.3: Document History Formatting Template}
+
+
+\subsubsection*{Appendix A.4: Table of Contents Formatting Template}
+\addcontentsline{toc}{subsubsection}{Appendix A.4: Table of Contents Formatting Template}
+
+% === Document History ===
+\newpage
+\section*{Document History}
+\begin{center}
+    \begin{tabularx}{\textwidth}{|c|Y|c|c|}
+    \hline
+    \textbf{Version} & \textbf{History} & \textbf{Date} & \textbf{Approved by} \\
+    \hline
+    1.0 & Initial release of SOP for Writing and Formatting Standard Operating Procedures & 7 April 2025 & \Approver \\
+    \hline
+    \end{tabularx}
+\end{center}
+
+% === Signature Page ===
+\newpage
+\section*{Signature Page}
+
+\rule{16cm}{0.4pt}
+
+\textbf{Name:} \Author\\
+\textbf{Title:} \\
+\textbf{Date:} \\
+\textbf{Time:} \\
+\textbf{Meaning:} Document reviewed and signed as author
+
+\rule{16cm}{0.4pt}
+
+\textbf{Name:} \Reviewer\\
+\textbf{Title:} \\
+\textbf{Date:} \\
+\textbf{Time:} \\
+\textbf{Meaning:} Document reviewed and signed as reviewer
+
+\rule{16cm}{0.4pt}
+
+\textbf{Name:} \Approver\\
+\textbf{Title:} \\
+\textbf{Date:}\\
+\textbf{Time:} \\
+\textbf{Meaning:} Document reviewed and signed as approver
+
+\rule{16cm}{0.4pt}
+
+\textbf{Name:} \DocumentOwner\\
+\textbf{Title:} \\
+\textbf{Date:} \\
+\textbf{Time:} \\
+\textbf{Meaning:} Document reviewed and signed as document owner
+
+\rule{16cm}{0.4pt}
+
+\end{document}
